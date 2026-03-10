@@ -22,7 +22,7 @@ A little about me:
 The University of Auckland website:
 https://www.auckland.ac.nz
 
-You can also visite [GitHub](https://github.com/ClaraZ-1227/stats220)
+You can also visit my [stats220 repository](https://github.com/ClaraZ-1227/stats220)
 
 ## How I feel about university
 
