@@ -25,12 +25,11 @@ p {
 
 ## Bus Passenger Headphone Usage
 
-```{r}
+```{r results='asis'}
 suppressPackageStartupMessages(library(tidyverse))
 
 logged_data <- read_csv(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQO9Qyksn-4DfN26YpXyWU9sMD85FLfrzqN719NOhOG--6z0lEIFXDW2Hn6nBK9C1Tm872wGr99_BQk/pub?output=csv",
-  show_col_types = FALSE
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQO9Qyksn-4DfN26YpXyWU9sMD85FLfrzqN719NOhOG--6z0lEIFXDW2Hn6nBK9C1Tm872wGr99_BQk/pub?output=csv"
 )
 
 latest_data <- logged_data %>%
@@ -41,9 +40,7 @@ latest_data <- logged_data %>%
     minutes = `How many minutes have they been on the bus (estimated)?`,
     time_of_day = `Time of day`
   )
-```
 
-```{r results='asis'}
 prop_headphones <- round(mean(latest_data$headphones == "Yes") * 100, 1)
 mean_minutes <- round(mean(latest_data$minutes), 1)
 
@@ -51,26 +48,26 @@ cat(paste0("Approximately ", prop_headphones,
            "% of observed passengers were wearing headphones.\n\n"))
 
 cat(paste0("On average, observed passengers had been on the bus for ",
-           mean_minutes, " minutes.\n"))
-```
+           mean_minutes, " minutes.\n\n"))
 
-```{r}
-ggplot(latest_data, aes(x = headphones)) +
-  geom_bar() +
-  labs(
-    title = "Headphone use among observed bus passengers",
-    x = "Wearing headphones",
-    y = "Count"
-  )
-```
+print(
+  ggplot(latest_data, aes(x = headphones)) +
+    geom_bar() +
+    labs(
+      title = "Headphone use among observed bus passengers",
+      x = "Wearing headphones",
+      y = "Count"
+    )
+)
 
-```{r}
-ggplot(latest_data, aes(x = activity)) +
-  geom_bar() +
-  labs(
-    title = "Activities of observed bus passengers",
-    x = "Passenger activity",
-    y = "Count"
-  ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+print(
+  ggplot(latest_data, aes(x = activity)) +
+    geom_bar() +
+    labs(
+      title = "Activities of observed bus passengers",
+      x = "Passenger activity",
+      y = "Count"
+    ) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+)
 ```
