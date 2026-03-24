@@ -26,7 +26,9 @@ p {
 ## Bus Passenger Headphone Usage
 
 ```{r results='asis'}
-suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(ggplot2))
 
 logged_data <- read_csv(
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQO9Qyksn-4DfN26YpXyWU9sMD85FLfrzqN719NOhOG--6z0lEIFXDW2Hn6nBK9C1Tm872wGr99_BQk/pub?output=csv"
