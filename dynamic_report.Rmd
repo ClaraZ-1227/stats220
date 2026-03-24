@@ -4,7 +4,7 @@ output: html_fragment
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 
 ```
 
@@ -30,7 +30,12 @@ p {
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
 
-logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQO9Qyksn-4DfN26YpXyWU9sMD85FLfrzqN719NOhOG--6z0lEIFXDW2Hn6nBK9C1Tm872wGr99_BQk/pub?output=csv")
+logged_data <- read_csv(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQO9Qyksn-4DfN26YpXyWU9sMD85FLfrzqN719NOhOG--6z0lEIFXDW2Hn6nBK9C1Tm872wGr99_BQk/pub?output=csv",
+  show_col_types = FALSE
+)
+
+
 
 latest_data <- logged_data %>%
   rename(
@@ -41,13 +46,11 @@ latest_data <- logged_data %>%
     time_of_day = `Time of day`
   )
 
-prop_headphones <- mean(latest_data$headphones == "Yes")
-mean_minutes <- mean(latest_data$minutes)
 ```
 
-Approximately `r round(prop_headphones * 100, 1)`% of observed passengers were wearing headphones.
+Approximately `r round(mean(latest_data$headphones == "Yes") * 100, 1)`% of observed passengers were wearing headphones.
 
-On average, observed passengers had been on the bus for `r round(mean_minutes, 1)` minutes.
+On average, observed passengers had been on the bus for `r round(mean(latest_data$minutes), 1)` minutes.
 
 ```{r}
 ggplot(latest_data, aes(x = headphones)) +
@@ -68,3 +71,5 @@ ggplot(latest_data, aes(x = activity)) +
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+
