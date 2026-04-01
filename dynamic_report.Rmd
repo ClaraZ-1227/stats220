@@ -9,23 +9,34 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 
 ```{css}
 body {
+  background-color: #e8f5e9;
   font-family: Arial, sans-serif;
   margin: 20px;
 }
 
+h1 {
+  color: #1b5e20;
+}
+
 h2 {
-  color: #2c3e50;
+  color: #2e7d32;
 }
 
 p {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 ```
 
+## Introduction
+
+This report documents my observations of bus passengers over several consecutive days, with a focus on whether they were wearing headphones. The data was collected through a Google form, and I recorded the results of each observation during the ride. In addition to headphone use, I also recorded the passengers' activities, the duration they spent on the bus, and the specific time of the ride.
+
+The purpose of this data collection was to explore the behaviors of people in the daily public transportation environment. Through the analysis of this dataset, I learned about the widespread use of headphones among passengers and the other activities associated with it. The data is presented in a dynamic report format and is automatically updated as new data is added.
+
 ## Bus Passenger Headphone Usage
 
-```{r results='asis'}
+```{r}
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(ggplot2))
@@ -42,7 +53,9 @@ latest_data <- logged_data %>%
     minutes = `How many minutes have they been on the bus (estimated)?`,
     time_of_day = `Time of day`
   )
+```
 
+```{r results='asis', comment=NA}
 prop_headphones <- round(mean(latest_data$headphones == "Yes") * 100, 1)
 mean_minutes <- round(mean(latest_data$minutes), 1)
 
@@ -51,25 +64,25 @@ cat(paste0("Approximately ", prop_headphones,
 
 cat(paste0("On average, observed passengers had been on the bus for ",
            mean_minutes, " minutes.\n\n"))
+```
 
-print(
-  ggplot(latest_data, aes(x = headphones)) +
-    geom_bar() +
-    labs(
-      title = "Headphone use among observed bus passengers",
-      x = "Wearing headphones",
-      y = "Count"
-    )
-)
+```{r}
+ggplot(latest_data, aes(x = headphones)) +
+  geom_bar() +
+  labs(
+    title = "Headphone use among observed bus passengers",
+    x = "Wearing headphones",
+    y = "Count"
+  )
+```
 
-print(
-  ggplot(latest_data, aes(x = activity)) +
-    geom_bar() +
-    labs(
-      title = "Activities of observed bus passengers",
-      x = "Passenger activity",
-      y = "Count"
-    ) +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))
-)
+```{r}
+ggplot(latest_data, aes(x = activity)) +
+  geom_bar() +
+  labs(
+    title = "Activities of observed bus passengers",
+    x = "Passenger activity",
+    y = "Count"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
