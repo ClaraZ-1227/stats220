@@ -67,23 +67,32 @@ The first visualisation shows the most common passenger activities observed duri
 
 ![Bar chart showing passenger activities on the bus. Using phone was the most common activity, followed by talking and sleeping.](plot1.png)
 
-Using phones was by far the most common activity recorded during the observations. This was not very surprising, since many passengers appeared to spend their commute scrolling, texting, or listening to media while travelling. Talking and sleeping were also relatively common, which may reflect different types of travel routines depending on the passenger and the length of the trip. Activities such as eating or using another device were much less common in comparison. Overall, the chart suggests that most passengers used bus time for low-effort and personal activities rather than active social interaction.
+This horizontal bar graph shows the most frequent of all observed activities were phones, which is to be expected since it appeared that nearly all bus riders spent their time on a bus either scrolling, texting, or listening to something while they were riding. Similarly, talking and sleeping were also relatively frequent activity for all bus riders, which probably indicates that passengers have differing travel routines, depending on both the passenger and the duration of their travel. Other types of activity were much lower in occurrence than both, such as eating or using another device. This tells me that the great majority of passengers were using their bus time for both low-effort and personal activities, rather than for much social interaction.
+
+## Headphone use
+
+This visualisation shows how frequently passengers were observed wearing headphones during bus trips.
+
+![Bar chart showing whether passengers were wearing headphones.](plot2.png)
+The use of headphones creates another layer to the story as it demonstrates that how passengers may create a more private and personal space while travelling in public. The group of people being observed wearing headphones appeared more focused on their own activities when compared to the individuals around them. Based on this, it suggest that many people will treat public transportation as some form of individual experience, rather than as a social environment. Although not every passenger wore headphones, the chart shows that headphone use was still very common throughout the observations.
+
+
 
 ## Trip duration and passenger activity
 
 The second visualisation compares estimated bus trip duration across different passenger activities. This helps show whether some activities were more common during longer or shorter trips.
 
-![Boxplot comparing bus trip duration by passenger activity. Some activities show wider variation in trip duration than others.](plot2.png)
+![Boxplot comparing bus trip duration by passenger activity. Some activities show wider variation in trip duration than others.](plot3.png)
 
-The boxplot shows that some activities were linked with much longer estimated travel times than others. Sleeping and phone use appeared across a wide range of trip durations, which could suggest that passengers were more likely to settle into these activities during longer journeys. In contrast, activities such as eating appeared only occasionally and over shorter periods of time. There is still quite a lot of variation within each activity group, but the visualisation suggests that trip length may influence how passengers choose to spend their time.
+The boxplot illustrates how different activities were connected with varying levels of estimated travel times. Sleeping and using a mobile device had greater representation across all of the trips than any other activity, thus it may indicate that passengers spent more time on these two activities if they rode for long periods of time. In contrast, activities such as eating appeared only occasionally and over shorter periods of time. There is still quite a lot of variation within each activity group, but the visualisation suggests that trip length may influence how passengers choose to spend their time.
 
 ## Time of day
 
 The final visualisation shows when observations were most commonly recorded. This gives context for the data collection and helps explain when passenger behaviours were observed.
 
-![Bar chart showing the number of observations across different times of day. Morning and afternoon had the highest number of observations.](plot3.png)
+![Bar chart showing the number of observations across different times of day. Morning and afternoon had the highest number of observations.](plot4.png)
 
-Most of the observations were recorded during the morning and afternoon periods, while fewer were collected during the evening and night. This likely reflects the times when bus travel was most accessible during the data collection process. It also means that the story shown in these visualisations is more representative of daytime commuting behaviour rather than late-night travel. The chart helps provide context for the rest of the data instead of simply acting as a summary count.
+Most of the observations were recorded during the morning and afternoon periods, while fewer were collected during the evening and night. This was likely influenced by the times when I most often used public transport during the data collection process. Because the observations were shaped by my own travel routines, the visualisations are more representative of daytime commuting behaviour rather than late-night travel. Someone collecting data during peak-hour or late-night bus trips may have observed different passenger behaviours and activity patterns. This suggests that the patterns shown in the visualisations were influenced not only by passenger behaviour itself, but also by the context and timing of the data collection process.
 
 ## Overall story
 
